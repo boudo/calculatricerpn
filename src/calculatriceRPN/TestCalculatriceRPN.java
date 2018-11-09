@@ -4,16 +4,48 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import testalculatricerpn.DivivionParZeroException;
-import testalculatricerpn.MoteurRPN;
-import testalculatricerpn.OperandeManquantException;
-import testalculatricerpn.OperandeTropGrandException;
-import testalculatricerpn.OperandeTropPetitException;
-import testalculatricerpn.SaisieRPN;
-import testalculatricerpn.TestEnumOperation;
+
 
 public class TestCalculatriceRPN {
-
+	@Test
+	public void testOperations() {
+		for(Operation op: Operation.values())
+		{
+			assertNotNull(op); //chaque objet de TestEnumeration est different de nul
+		}
+		
+		for(Operation op: Operation.values())
+		{
+			if(Operation.PLUS.equals(op))
+			{
+				assertTrue(op.getOperation() == '+');
+			}
+			if(Operation.MOINS.equals(op))
+			{
+				assertTrue(op.getOperation() == '-');
+			}
+			if(Operation.MULT.equals(op))
+			{
+				assertTrue(op.getOperation() == '*');
+			}
+			if(Operation.DIV.equals(op))
+			{
+				assertFalse( !(op.getOperation() == '/') );
+			}
+		}
+	}
+	
+	@Test
+	public void testEvalOperations() {
+		Operation opPlus = Operation.PLUS;
+		Operation opMoins = Operation.MOINS;
+		Operation opMult = Operation.MULT;
+		Operation opDiv = Operation.DIV;
+		assertEquals(5.0, opPlus.eval(2,3), 0);
+		assertEquals(3.0, opMoins.eval(6,3), 0);
+		assertNotEquals(5, opMult.eval(2,3), 0);
+		assertNotEquals(0, opDiv.eval(6,3), 0);
+		}
 	@Test
 	public void testMoteurRPN() {
 		MoteurRPN mrpn = new MoteurRPN();
@@ -53,7 +85,7 @@ public class TestCalculatriceRPN {
 		try{
 			mrpn.ajouterOperande(5);
 			mrpn.ajouterOperande(0);
-			mrpn.eval(TestEnumOperation.DIV);
+			mrpn.eval(Operation.DIV);
 			
 		}catch(OperandeManquantException | DivivionParZeroException | OperandeTropPetitException | OperandeTropGrandException e)
 		{
@@ -66,7 +98,7 @@ public class TestCalculatriceRPN {
 		MoteurRPN mrpn = new MoteurRPN();
 		try{
 			mrpn.ajouterOperande(5);
-			mrpn.eval(TestEnumOperation.PLUS);
+			mrpn.eval(Operation.PLUS);
 			
 		}catch(OperandeManquantException | DivivionParZeroException | OperandeTropPetitException | OperandeTropGrandException e)
 		{
@@ -87,4 +119,3 @@ public class TestCalculatriceRPN {
 
 }
 
-}

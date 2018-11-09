@@ -25,7 +25,7 @@ public class MoteurRPN {
 		_pile.push(operande); //  L’intervalle de nombres supporté 
 	}
 	
-	public void eval(TestEnumOperation op) throws OperandeManquantException, DivivionParZeroException// Exception
+	public void eval(Operation op) throws OperandeManquantException, DivivionParZeroException// Exception
 	{
 		double valPile1 = MIN_VALUE - 1;
 		double valPile2 = MIN_VALUE - 1;
