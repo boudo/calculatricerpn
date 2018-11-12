@@ -17,7 +17,6 @@ public enum CalculatriceRPN {
 	public static void main(String[] args) {
 		
 		CalculatriceRPN.CALCULATRICE.on();
-
 	}
 
 }
