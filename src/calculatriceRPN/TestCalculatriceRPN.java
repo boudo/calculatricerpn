@@ -74,7 +74,7 @@ public class TestCalculatriceRPN {
 	
 	@Test
 	public void testCalculatriceRPN() {
-		CalculatriceRPN c =CalculatriceRPN.CALCULATRICE;
+		CalculatriceRPN c = CalculatriceRPN.CALCULATRICE;
 		assertNotNull(c);
 	}
 
