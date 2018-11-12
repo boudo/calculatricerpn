@@ -22,7 +22,7 @@ public class MoteurRPN {
 		{
 			throw new OperandeTropGrandException();
 		}
-		_pile.push(operande); //  L’intervalle de nombres supporté 
+		_pile.push(operande);
 	}
 	
 	public void eval(Operation op) throws OperandeManquantException, DivivionParZeroException// Exception
@@ -39,7 +39,7 @@ public class MoteurRPN {
 				_pile.push(valPile1);
 				throw new DivivionParZeroException();
 			}
-			this.ajouterOperande(op.eval(operande2, operande1)); //  L’intervalle de nombres supporté
+			this.ajouterOperande(op.eval(operande2, operande1));
 		}
 		catch(EmptyStackException e)
 		{
