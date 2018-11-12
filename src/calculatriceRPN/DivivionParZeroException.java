@@ -1,7 +1,7 @@
 package calculatriceRPN;
 
 
-class DivivionParZeroException extends OperationImpossibleException{
+public class DivivionParZeroException extends OperationImpossibleException{
 
 	/**
 	 * 

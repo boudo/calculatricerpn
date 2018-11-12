@@ -1,6 +1,6 @@
 package calculatriceRPN;
 
-class OperationImpossibleException extends Exception{
+public class OperationImpossibleException extends Exception{
 
 	/**
 	 * 

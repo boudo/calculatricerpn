@@ -5,7 +5,7 @@ import java.util.*;
 public class MoteurRPN {
 	
 	private Stack<Double> _pile;
-	public final double MAX_VALUE = Double.MAX_VALUE; /*1000000*/;
+	public final double MAX_VALUE = /*Double.MAX_VALUE;*/ 1000000;
 	public final double MIN_VALUE = /*Double.MIN_VALUE;*/ 0;
 	
 	public MoteurRPN() {
@@ -25,7 +25,7 @@ public class MoteurRPN {
 		_pile.push(operande); //  L’intervalle de nombres supporté 
 	}
 	
-	public void eval(TestEnumOperation op) throws OperandeManquantException, DivivionParZeroException// Exception
+	public void eval(Operation op) throws OperandeManquantException, DivivionParZeroException// Exception
 	{
 		double valPile1 = MIN_VALUE - 1;
 		double valPile2 = MIN_VALUE - 1;
@@ -53,7 +53,8 @@ public class MoteurRPN {
 		{
 			_pile.push(valPile2);
 			_pile.push(valPile1);
-			System.out.println(e.getMessage()+" "+valPile2+" "+op.getOperation()+" "+valPile1+" = "+op.eval(valPile2, valPile1));
+			System.out.println(e.getMessage()+" ("+valPile2+" "+op.getOperation()+" "+valPile1+""
+								+ " = "+op.eval(valPile2, valPile1)+")");
 		}
 		 
 	}

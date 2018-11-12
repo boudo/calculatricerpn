@@ -4,7 +4,7 @@ public enum Operation {
 	PLUS('+')
 	{
 		@Override
-		double eval(double operande1, double operande2)
+		public double eval(double operande1, double operande2)
 		{
 			return operande1 + operande2;
 		}
@@ -12,7 +12,7 @@ public enum Operation {
 	MOINS('-')
 	{
 		@Override
-		double eval(double operande1, double operande2)
+		public double eval(double operande1, double operande2)
 		{
 			return operande1 - operande2;
 		}
@@ -20,7 +20,7 @@ public enum Operation {
 	MULT('*')
 	{
 		@Override
-		double eval(double operande1, double operande2)
+		public double eval(double operande1, double operande2)
 		{
 			return operande1 * operande2;
 		}
@@ -28,9 +28,8 @@ public enum Operation {
 	DIV('/')
 	{
 		@Override
-		double eval(double operande1, double operande2)
+		public double eval(double operande1, double operande2)
 		{
-			//Exception si operande2 = 0 
 			return operande1 / operande2;
 		}
 	};
@@ -42,7 +41,7 @@ public enum Operation {
 		_symbole = symbole;
 	}
 	
-	abstract double eval(double operande1, double operande2);
+	public abstract double eval(double operande1, double operande2);
 	
 	public char getOperation()
 	{

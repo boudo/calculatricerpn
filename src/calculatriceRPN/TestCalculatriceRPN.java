@@ -4,14 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import testalculatricerpn.DivivionParZeroException;
-import testalculatricerpn.MoteurRPN;
-import testalculatricerpn.OperandeManquantException;
-import testalculatricerpn.OperandeTropGrandException;
-import testalculatricerpn.OperandeTropPetitException;
-import testalculatricerpn.SaisieRPN;
-import testalculatricerpn.TestEnumOperation;
-
 public class TestCalculatriceRPN {
 
 	@Test
@@ -53,7 +45,7 @@ public class TestCalculatriceRPN {
 		try{
 			mrpn.ajouterOperande(5);
 			mrpn.ajouterOperande(0);
-			mrpn.eval(TestEnumOperation.DIV);
+			mrpn.eval(Operation.DIV);
 			
 		}catch(OperandeManquantException | DivivionParZeroException | OperandeTropPetitException | OperandeTropGrandException e)
 		{
@@ -66,7 +58,7 @@ public class TestCalculatriceRPN {
 		MoteurRPN mrpn = new MoteurRPN();
 		try{
 			mrpn.ajouterOperande(5);
-			mrpn.eval(TestEnumOperation.PLUS);
+			mrpn.eval(Operation.PLUS);
 			
 		}catch(OperandeManquantException | DivivionParZeroException | OperandeTropPetitException | OperandeTropGrandException e)
 		{
@@ -80,11 +72,11 @@ public class TestCalculatriceRPN {
 		assertNotNull(srpn);
 	}
 	
-//	@Test
-//	public void testCalculatriceRPN() {
-//		TestEnumCalculatriceRPN.CALCULATRICE.on();
-//	}
+	@Test
+	public void testCalculatriceRPN() {
+		CalculatriceRPN c =CalculatriceRPN.CALCULATRICE;
+		assertNotNull(c);
+	}
 
-}
 
 }

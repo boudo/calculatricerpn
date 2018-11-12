@@ -1,7 +1,7 @@
 package calculatriceRPN;
 
 
-class OperandeManquantException extends OperationImpossibleException{
+public class OperandeManquantException extends OperationImpossibleException{
 
 	/**
 	 * 
