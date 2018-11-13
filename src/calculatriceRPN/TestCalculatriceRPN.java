@@ -4,7 +4,71 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+
 public class TestCalculatriceRPN {
+
+	@Test
+	public void testPlus(){
+		Operation op = Operation.PLUS;
+		assertNotNull(op);
+	}
+	@Test
+	public void testSymbPlus(){
+		Operation op = Operation.PLUS;
+		assertTrue(op.getOperation() == '+');
+	}
+	@Test
+	public void testMoins(){
+		Operation op = Operation.MOINS;
+		assertNotNull(op);
+	}
+	@Test
+	public void testSymbMoins(){
+		Operation op = Operation.MOINS;
+		assertTrue(op.getOperation() == '-');
+	}
+	@Test
+	public void testMult(){
+		Operation op = Operation.MULT;
+		assertNotNull(op);
+	}
+	@Test
+	public void testSymbMult(){
+		Operation op = Operation.MULT;
+		assertTrue(op.getOperation() == '*');
+	}
+	@Test
+	public void testDiv(){
+		Operation op = Operation.DIV;
+		assertNotNull(op);
+	}
+	@Test
+	public void testSymbDiv(){
+		Operation op = Operation.DIV;
+		assertTrue(op.getOperation() == '/');
+	}
+		
+	@Test
+	public void testEvalPlus() {
+		Operation opPlus = Operation.PLUS;
+		assertEquals(5.0, opPlus.eval(2,3), 0);
+	}
+	@Test
+	public void testEvalMoins() {
+		Operation opMoins = Operation.MOINS;
+		assertEquals(3.0, opMoins.eval(6,3), 0);
+	
+	}
+	@Test
+	public void testEvalDiv() {
+		Operation opDiv = Operation.DIV;
+		assertNotEquals(0, opDiv.eval(6,3), 0);
+	}
+	@Test
+	public void testEvalMult() {
+		Operation opMult = Operation.MULT;
+		assertNotEquals(5, opMult.eval(2,3), 0);
+	}
 
 	@Test
 	public void testMoteurRPN() {
@@ -77,6 +141,5 @@ public class TestCalculatriceRPN {
 		CalculatriceRPN c = CalculatriceRPN.CALCULATRICE;
 		assertNotNull(c);
 	}
-
-
 }
+
