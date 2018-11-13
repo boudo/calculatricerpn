@@ -7,45 +7,79 @@ import org.junit.Test;
 
 
 public class TestCalculatriceRPN {
-	@Test
-	public void testOperations() {
-		for(Operation op: Operation.values())
-		{
-			assertNotNull(op); //chaque objet de TestEnumeration est different de nul
-		}
-		
-		for(Operation op: Operation.values())
-		{
+
+		@Test
+		public void testPlus(){
+			for(Operation op: Operation.values())
+			{
+				assertNotNull(op); //chaque objet de TestEnumeration est different de nul
+			
 			if(Operation.PLUS.equals(op))
 			{
 				assertTrue(op.getOperation() == '+');
 			}
+			}
+			}
+		@Test
+		public void testMoins(){
+			for(Operation op: Operation.values())
+			{
+				assertNotNull(op); //chaque objet de TestEnumeration est different de nul
+			
 			if(Operation.MOINS.equals(op))
 			{
 				assertTrue(op.getOperation() == '-');
 			}
+			}
+			}
+		@Test
+		public void testDiv(){
+			for(Operation op: Operation.values())
+			{
+				assertNotNull(op); //chaque objet de TestEnumeration est different de nul
+			
+			if(Operation.DIV.equals(op))
+			{
+				assertTrue(op.getOperation() == '/');
+			}
+			}
+			}
+		
+		@Test
+		public void testMult(){
+			for(Operation op: Operation.values())
+			{
+				assertNotNull(op); //chaque objet de TestEnumeration est different de nul
+			
 			if(Operation.MULT.equals(op))
 			{
 				assertTrue(op.getOperation() == '*');
 			}
-			if(Operation.DIV.equals(op))
-			{
-				assertFalse( !(op.getOperation() == '/') );
 			}
-		}
-	}
+			}
 	
 	@Test
-	public void testEvalOperations() {
+	public void testEvalPlus() {
 		Operation opPlus = Operation.PLUS;
-		Operation opMoins = Operation.MOINS;
-		Operation opMult = Operation.MULT;
-		Operation opDiv = Operation.DIV;
 		assertEquals(5.0, opPlus.eval(2,3), 0);
+	}
+	@Test
+	public void testEvalMoins() {
+		Operation opMoins = Operation.MOINS;
 		assertEquals(3.0, opMoins.eval(6,3), 0);
-		assertNotEquals(5, opMult.eval(2,3), 0);
+	
+	}
+	@Test
+	public void testEvalDiv() {
+		Operation opDiv = Operation.DIV;
 		assertNotEquals(0, opDiv.eval(6,3), 0);
-		}
+	}
+	@Test
+	public void testEvalMult() {
+		Operation opMult = Operation.MULT;
+		assertNotEquals(5, opMult.eval(2,3), 0);
+	}
+
 	@Test
 	public void testMoteurRPN() {
 		MoteurRPN mrpn = new MoteurRPN();
