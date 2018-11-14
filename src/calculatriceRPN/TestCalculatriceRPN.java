@@ -84,7 +84,7 @@ public class TestCalculatriceRPN {
 			mrpn.ajouterOperande(15.2);
 		}catch(OperandeTropPetitException | OperandeTropGrandException e)
 		{
-			assertTrue(e.getMessage()=="Operande trop grande");
+			assertTrue(e.getMessage().equals("Operande trop grande"));
 		}
 		
 		
@@ -97,7 +97,7 @@ public class TestCalculatriceRPN {
 			mrpn.ajouterOperande(-1.2);
 		}catch(OperandeTropPetitException | OperandeTropGrandException e)
 		{
-			assertTrue(e.getMessage()=="Operande trop petit");
+			assertTrue(e.getMessage().equals("Operande trop petit"));
 		}
 		
 		

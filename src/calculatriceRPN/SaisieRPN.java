@@ -46,11 +46,7 @@ public class SaisieRPN {
 			{
 				System.out.println(e.getMessage());
 			}
-			catch(OperandeTropPetitException e)
-			{
-				System.out.println(e.getMessage());
-			}
-			catch(OperandeTropGrandException e)
+			catch(OperandeTropPetitException | OperandeTropGrandException e)
 			{
 				System.out.println(e.getMessage());
 			}
